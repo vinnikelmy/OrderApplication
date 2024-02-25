@@ -113,12 +113,16 @@ fun OrderChooseProductsScreen(
                 label = {
                     Text("Search Product")
                 },
-                maxLines = 1
+                maxLines = 1,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(15.dp)
+                    .clip(RoundedCornerShape(10.dp))
             )
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier
-                    .padding(top = 20.dp)
+                    .padding(16.dp)
             ){
                 items(
                     orderChooseProductsViewModel.productsToShow,

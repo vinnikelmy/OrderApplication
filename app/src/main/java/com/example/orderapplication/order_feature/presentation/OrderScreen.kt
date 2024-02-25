@@ -5,7 +5,6 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -89,8 +88,7 @@ fun OrderScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .background(gray)
-                    .padding(values),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
+                    .padding(values)
             ){
                 items(
                     orderViewModel.orderList,
@@ -102,12 +100,12 @@ fun OrderScreen(
                         it,
                         modifier = Modifier
                             .fillMaxWidth()
+                            .padding(15.dp)
                             .clip(RoundedCornerShape(10.dp))
                             .border(1.dp, color = white, RoundedCornerShape(10.dp))
                             .clickable {
                                 orderViewModel.onOrderClick(it.orderId)
                             }
-                            .padding(15.dp)
                     )
                 }
             }

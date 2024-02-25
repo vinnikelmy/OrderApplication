@@ -58,7 +58,7 @@ class OrderViewModel @Inject constructor(
     }
 
     private fun setupOrderList() {
-        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH.mm.ss")
+        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss")
         orderList = orders.map { order ->
             order.toOrderListItem()
         }.sortedByDescending { orderListItem ->

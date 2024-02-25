@@ -82,12 +82,16 @@ fun OrderChooseDelivererScreen(
                 label = {
                     Text("Search deliverer")
                 },
-                singleLine = true
+                singleLine = true,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(15.dp)
+                    .clip(RoundedCornerShape(10.dp))
             )
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier
-                    .padding(top = 20.dp)
+                    .padding(16.dp)
             ){
                 items(
                     orderChooseDelivererViewModel.deliverersToShow,
